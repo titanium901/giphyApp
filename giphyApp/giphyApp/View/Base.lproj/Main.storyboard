@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="giphyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="giphy" translatesAutoresizingMaskIntoConstraints="NO" id="1X7-kd-bNM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="154"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wHF-65-kqT" appends="YES" id="Jin-KY-Dvk"/>
+                                </connections>
+                            </imageView>
+                            <searchBar contentMode="redraw" placeholder="Giphy super finder" translatesAutoresizingMaskIntoConstraints="NO" id="UyD-VB-TxW">
+                                <rect key="frame" x="0.0" y="203" width="414" height="56"/>
+                                <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="b2V-jE-S5y"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kqK-nS-xh1">
+                                <rect key="frame" x="0.0" y="259" width="414" height="637"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="420" id="d8K-yY-QLp" customClass="GifCell" customModule="giphyApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="420"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d8K-yY-QLp" id="pES-aX-fU2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2H-BB-yAj" customClass="FLAnimatedImageView">
+                                                    <rect key="frame" x="7" y="3" width="400" height="400"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="400" id="A5S-Qj-pqe"/>
+                                                        <constraint firstAttribute="height" constant="400" id="Iae-w7-vJr"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X2H-BB-yAj" firstAttribute="centerX" secondItem="pES-aX-fU2" secondAttribute="centerX" id="2Ms-Go-nV6"/>
+                                                <constraint firstAttribute="bottom" secondItem="X2H-BB-yAj" secondAttribute="bottom" constant="3" id="5c4-hH-dpD"/>
+                                                <constraint firstItem="X2H-BB-yAj" firstAttribute="top" secondItem="pES-aX-fU2" secondAttribute="top" constant="3" id="vib-jd-AtV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="gifImage" destination="X2H-BB-yAj" id="4zP-jd-OGW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="kqK-nS-xh1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Pk-NY-dPZ"/>
+                            <constraint firstItem="kqK-nS-xh1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="3l1-TQ-T9L"/>
+                            <constraint firstItem="UyD-VB-TxW" firstAttribute="top" secondItem="1X7-kd-bNM" secondAttribute="bottom" constant="5" id="63N-jo-Ezn"/>
+                            <constraint firstItem="UyD-VB-TxW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AsO-VK-c5U"/>
+                            <constraint firstItem="UyD-VB-TxW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="abF-YD-9qH"/>
+                            <constraint firstItem="1X7-kd-bNM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gMa-py-dS3"/>
+                            <constraint firstItem="kqK-nS-xh1" firstAttribute="top" secondItem="UyD-VB-TxW" secondAttribute="bottom" id="jw3-hc-DIu"/>
+                            <constraint firstItem="1X7-kd-bNM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qlX-6t-lYG"/>
+                            <constraint firstAttribute="bottom" secondItem="kqK-nS-xh1" secondAttribute="bottom" id="tzC-iI-nTg"/>
+                            <constraint firstItem="1X7-kd-bNM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zJv-25-2rG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="UyD-VB-TxW" id="WSa-k8-gJu"/>
+                        <outlet property="tableView" destination="kqK-nS-xh1" id="7sF-xU-qba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wHF-65-kqT">
+                    <connections>
+                        <action selector="tapOnLogo:" destination="BYZ-38-t0r" id="Rgx-KO-Iob"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="giphy" width="514" height="154"/>
+    </resources>
+</document>
