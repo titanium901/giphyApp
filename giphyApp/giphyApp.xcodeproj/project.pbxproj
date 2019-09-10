@@ -96,9 +96,9 @@
 				CA721ED823263A2800FECEDE /* View */,
 				CA721ED723263A1400FECEDE /* Controller */,
 				CA721EE8232682A500FECEDE /* Support */,
+				CA721ECF2326369000FECEDE /* Info.plist */,
 				CA721ECC2326369000FECEDE /* LaunchScreen.storyboard */,
 				CA721ECA2326369000FECEDE /* Assets.xcassets */,
-				CA721ECF2326369000FECEDE /* Info.plist */,
 			);
 			path = giphyApp;
 			sourceTree = "<group>";

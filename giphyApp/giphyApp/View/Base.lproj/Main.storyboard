@@ -71,6 +71,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LjX-gy-C8v">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
@@ -78,9 +81,11 @@
                             <constraint firstItem="kqK-nS-xh1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="3l1-TQ-T9L"/>
                             <constraint firstItem="UyD-VB-TxW" firstAttribute="top" secondItem="1X7-kd-bNM" secondAttribute="bottom" constant="5" id="63N-jo-Ezn"/>
                             <constraint firstItem="UyD-VB-TxW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AsO-VK-c5U"/>
+                            <constraint firstItem="LjX-gy-C8v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kq3-L5-30r"/>
                             <constraint firstItem="UyD-VB-TxW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="abF-YD-9qH"/>
                             <constraint firstItem="1X7-kd-bNM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gMa-py-dS3"/>
                             <constraint firstItem="kqK-nS-xh1" firstAttribute="top" secondItem="UyD-VB-TxW" secondAttribute="bottom" id="jw3-hc-DIu"/>
+                            <constraint firstItem="LjX-gy-C8v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nxr-Sa-t0Y"/>
                             <constraint firstItem="1X7-kd-bNM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qlX-6t-lYG"/>
                             <constraint firstAttribute="bottom" secondItem="kqK-nS-xh1" secondAttribute="bottom" id="tzC-iI-nTg"/>
                             <constraint firstItem="1X7-kd-bNM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zJv-25-2rG"/>
@@ -88,6 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="LjX-gy-C8v" id="7bi-fF-Z65"/>
                         <outlet property="searchBar" destination="UyD-VB-TxW" id="WSa-k8-gJu"/>
                         <outlet property="tableView" destination="kqK-nS-xh1" id="7sF-xU-qba"/>
                     </connections>
