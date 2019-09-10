@@ -11,9 +11,11 @@ import SDWebImage
 
 class MainVC: UIViewController {
 
+    //MARK: - IBOutlet
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - Properties
     var giphys = [Data]() {
         didSet {
             DispatchQueue.main.async {
@@ -36,13 +38,17 @@ class MainVC: UIViewController {
 
     }
     
+    //MARK: - IBAction
     
     @IBAction func tapOnLogo(_ sender: UITapGestureRecognizer) {
         giphys.removeAll()
         searchBar.text = nil
         reloadSearchBar()
         loadGifs()
+        scrollToFirstRow()
     }
+    
+    //MARK: - Methods
     
     func loadGifs() {
         let gifRequest = GifReguest(searchURL: false, word: nil, limit: "50", endpoint: "trending")
@@ -56,6 +62,12 @@ class MainVC: UIViewController {
                 
             }
         }
+    }
+    
+    
+    func scrollToFirstRow() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
 
@@ -143,10 +155,9 @@ extension MainVC: UISearchBarDelegate {
     
     func reloadSearchBar() {
         searchBar.resignFirstResponder()
-        tableView.setContentOffset(.zero, animated: true)
+//        tableView.setContentOffset(.zero, animated: true)
         
     }
-    
    
 }
 
