@@ -1,6 +1,6 @@
 # giphyApp
 
-![gifGif](https://user-images.githubusercontent.com/30910230/64545599-b54b9b00-d331-11e9-832c-498f12549b74.gif)
+![gifApp](https://user-images.githubusercontent.com/30910230/64593975-cc34d080-d3b7-11e9-9b87-26a2cd4547d8.gif)
 
 ### ТЕСТОВОЕ ЗАДАНИЕ
 
